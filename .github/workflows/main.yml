@@ -1,0 +1,14 @@
+# entre na pasta extraída
+cd opencut_mobile/OpenCut-Mobile
+
+# iniciar git
+git init
+
+git add .
+git commit -m "Initial commit - OpenCut Mobile"
+
+# conectar ao seu repo
+git branch -M main
+git remote add origin https://github.com/SEU-USUARIO/opencut-mobile.git
+
+git push -u origin main
