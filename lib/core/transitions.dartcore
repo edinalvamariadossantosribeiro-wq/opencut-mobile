@@ -1,0 +1,92 @@
+// lib/core/transitions.dart
+const List<Map<String, dynamic>> transitionPresets = [
+  {
+    "name": "Fade Suave",
+    "icon": "🌫️",
+    "description": "Transição suave clássica",
+    "ffmpeg": "xfade=transition=fade:duration=0.8"
+  },
+  {
+    "name": "Cross Zoom",
+    "icon": "🔍",
+    "description": "Zoom com cruzamento",
+    "ffmpeg": "xfade=transition=zoom:duration=1.0"
+  },
+  {
+    "name": "Slide Right",
+    "icon": "➡️",
+    "description": "Desliza da direita",
+    "ffmpeg": "xfade=transition=slideleft:duration=0.7"
+  },
+  {
+    "name": "Slide Left",
+    "icon": "⬅️",
+    "description": "Desliza da esquerda",
+    "ffmpeg": "xfade=transition=slideright:duration=0.7"
+  },
+  {
+    "name": "Glitch",
+    "icon": "⚡",
+    "description": "Efeito glitch moderno",
+    "ffmpeg": "glitch=0.5"
+  },
+  {
+    "name": "Flash Branco",
+    "icon": "⚡",
+    "description": "Flash rápido",
+    "ffmpeg": "xfade=transition=flash:duration=0.4"
+  },
+  {
+    "name": "Wipe Up",
+    "icon": "⬆️",
+    "description": "Apaga de baixo pra cima",
+    "ffmpeg": "xfade=transition=wipeup:duration=0.8"
+  },
+  {
+    "name": "Circle",
+    "icon": "⭕",
+    "description": "Transição circular",
+    "ffmpeg": "xfade=transition=circleclose:duration=1.0"
+  },
+  {
+    "name": "Pixelate",
+    "icon": "🟦",
+    "description": "Efeito pixel",
+    "ffmpeg": "pixelate"
+  },
+  {
+    "name": "Dissolve",
+    "icon": "🌌",
+    "description": "Dissolve suave",
+    "ffmpeg": "xfade=transition=dissolve:duration=0.9"
+  },
+  {
+    "name": "Zoom In",
+    "icon": "🔎",
+    "description": "Zoom entrando",
+    "ffmpeg": "zoompan=z='min(zoom+0.0015,1.5)':d=60"
+  },
+  {
+    "name": "Shake",
+    "icon": "📳",
+    "description": "Tremida forte",
+    "ffmpeg": "shake"
+  },
+];
+
+String getTransitionFFmpeg(String transitionName, double duration) {
+  final transition = transitionPresets.firstWhere(
+    (t) => t["name"] == transitionName,
+    orElse: () => transitionPresets[0],
+  );
+  return transition["ffmpeg"] as String;
+}
+
+// Lista de efeitos/filtros básicos
+const List<Map<String, dynamic>> filterPresets = [
+  {"name": "Vintage", "icon": "📼"},
+  {"name": "Black & White", "icon": "⚫"},
+  {"name": "Vibrant", "icon": "🌈"},
+  {"name": "Cinematic", "icon": "🎥"},
+  {"name": "Warm", "icon": "🔥"},
+];
